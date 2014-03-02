@@ -9,7 +9,7 @@ $channel->queue_declare('hello', false, false, false, false);
 
 echo ' [*] Waiting for messages. To exit press CTRL+C', "\n";
 
-$callback = function($msg)
+$callback = function($msg) {
   echo " [x] Received ", $msg->body, "\n";
 };
 
