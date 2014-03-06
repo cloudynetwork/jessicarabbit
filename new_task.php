@@ -6,7 +6,7 @@ use PhpAmqpLib\Message\AMQPMessage;
 $connection = new AMQPConnection('localhost', 5672, 'guest', 'guest');
 $channel = $connection->channel();
 
-$channel->queue_declare('task_queue', false, false, false, false);
+$channel->queue_declare('task_queue', false, true, false, false);
 
 $data = implode(' ', array_slice($argv, 1));
 if(empty($data)) $data = "Hello World!";
